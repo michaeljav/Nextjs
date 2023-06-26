@@ -3,9 +3,9 @@
 import { useTasks } from '../../context/TasksContext';
 
 const page = () => {
-  const value = useTasks();
+  // const value = useTasks();
 
-  console.log(value.tasks);
+  // console.log(value.tasks);
   return <div>About page</div>;
 };
 
