@@ -1,11 +1,11 @@
-// 'use client';
+'use client';
 
-// import { useTasks } from '../../context/TasksContext';
+import { useTasks } from '../../context/TasksContext';
 
 const page = () => {
-  // const value = useTasks();
+  const value = useTasks();
 
-  // console.log(value);
+  console.log(value.tasks);
   return <div>About page</div>;
 };
 
