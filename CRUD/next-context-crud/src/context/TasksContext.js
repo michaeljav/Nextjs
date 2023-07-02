@@ -15,17 +15,17 @@ export const useTasksContext = () => {
 export const TaskProvider = ({ children }) => {
   const [tasks, setTask] = useState([
     {
-      id: 1,
+      id: '1',
       title: 'My first task',
       description: 'some  first description',
     },
     {
-      id: 2,
+      id: '2',
       title: 'My second task',
       description: 'some  second description',
     },
     {
-      id: 3,
+      id: '3',
       title: 'My Third task',
       description: 'some  Third description',
     },
