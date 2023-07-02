@@ -34,9 +34,13 @@ export const TaskProvider = ({ children }) => {
   const createTask = (title, description) => {
     setTask([...tasks, { title, description, id: uuid() }]);
   };
+  const deleteTask = (id) =>
+    //creating a new array of tasks. Only enter the id differente to the current id.
+    setTask([...tasks.filter((task) => task.id !== id)]);
 
   return (
-    <TaskContext.Provider value={{ tasks: tasks, createTask }}>
+    //export function deleteTask
+    <TaskContext.Provider value={{ tasks: tasks, createTask, deleteTask }}>
       {children}
     </TaskContext.Provider>
   );
