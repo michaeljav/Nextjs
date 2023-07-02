@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 export const TaskCard = ({ task }) => {
   // const TaskCard = ({ task }) => {
-  console.log(task);
+  // console.log(task);
   const router = useRouter();
 
   return (

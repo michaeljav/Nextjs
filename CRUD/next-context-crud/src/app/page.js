@@ -1,13 +1,13 @@
 'use client';
 
-import { useTasks } from '../context/TasksContext';
+import { useTasksContext } from '../context/TasksContext';
 //export
 import { TaskCard } from '../components/TaskCard';
 //export default
 // import TaskCard from '../components/TaskCard';
 
 const Page = () => {
-  const { tasks } = useTasks();
+  const { tasks } = useTasksContext();
   console.log(tasks);
   return (
     <div>

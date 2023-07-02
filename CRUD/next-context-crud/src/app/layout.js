@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/Navbar';
 import { TaskProvider } from '@/context/TasksContext';
 import './globals.css';
 
@@ -17,7 +18,10 @@ export default function RootLayout({ children }) {
     at RedirectErrorBoundary */
     <html lang='en' suppressHydrationWarning={true}>
       <body className={inter.className}>
-        <TaskProvider>{children}</TaskProvider>
+        <TaskProvider>
+          <Navbar />
+          {children}
+        </TaskProvider>
         {/* {children} */}
       </body>
     </html>
