@@ -1,10 +1,10 @@
 'use client';
-import { createContext, useContext } from 'react';
-
+import { createContext, useContext, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 //where is stored the data
 export const TaskContext = createContext();
 
-export const useTasks = () => {
+export const useTasksContext = () => {
   //getting data from the store TaskContext
   const context = useContext(TaskContext);
 
@@ -13,7 +13,7 @@ export const useTasks = () => {
 };
 
 export const TaskProvider = ({ children }) => {
-  const tasks = [
+  const [tasks, setTask] = useState([
     {
       id: 1,
       title: 'My first task',
@@ -29,10 +29,14 @@ export const TaskProvider = ({ children }) => {
       title: 'My Third task',
       description: 'some  Third description',
     },
-  ];
+  ]);
+
+  const createTask = (title, description) => {
+    setTask([...tasks, { title, description, id: uuid() }]);
+  };
 
   return (
-    <TaskContext.Provider value={{ tasks: tasks }}>
+    <TaskContext.Provider value={{ tasks: tasks, createTask }}>
       {children}
     </TaskContext.Provider>
   );
