@@ -38,9 +38,21 @@ export const TaskProvider = ({ children }) => {
     //creating a new array of tasks. Only enter the id differente to the current id.
     setTask([...tasks.filter((task) => task.id !== id)]);
 
+  //update or keep the task as it is
+  const updateTask = (id, dataToModify) => {
+    //comipiar un nuevo array y luego a modificar
+    console.log('datos a modificar', id, dataToModify);
+    setTask([
+      ...tasks.map((task) =>
+        task.id === id ? { ...task, ...dataToModify } : task
+      ),
+    ]);
+  };
   return (
     //export function deleteTask
-    <TaskContext.Provider value={{ tasks: tasks, createTask, deleteTask }}>
+    <TaskContext.Provider
+      value={{ tasks: tasks, createTask, deleteTask, updateTask }}
+    >
       {children}
     </TaskContext.Provider>
   );

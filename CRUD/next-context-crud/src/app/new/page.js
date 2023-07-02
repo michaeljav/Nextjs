@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const Page = ({ params }) => {
   const [task, setTask] = useState({ id: '', title: '', description: '' });
   //call funciton  from context
-  const { tasks, createTask } = useTasksContext();
+  const { tasks, createTask, updateTask } = useTasksContext();
   const router = useRouter();
 
   console.log(params);
@@ -19,6 +19,7 @@ const Page = ({ params }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (params.id) {
+      updateTask(params.id, task);
     } else {
       createTask(task.title, task.description);
     }
