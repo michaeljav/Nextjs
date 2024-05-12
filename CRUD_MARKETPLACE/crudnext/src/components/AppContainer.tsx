@@ -115,6 +115,7 @@ export default function AppContainer({
 
       {/* navbar */}
       <Box component="nav" sx={{ width: { sm: drawerWidth } }}>
+        {/* Desktop or mobile */}
         <Drawer
           variant="permanent"
           open={true}
@@ -128,6 +129,7 @@ export default function AppContainer({
           {drawer}
         </Drawer>
 
+        {/* Mobile */}
         <Drawer
           variant="temporary"
           open={drawerOpen}
